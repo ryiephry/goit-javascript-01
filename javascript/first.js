@@ -21,7 +21,8 @@ for (let i = 0;  i < 5;  i++){
 let josh = "This Is My Name , And Your Gay ";
 console.log(josh);
 console.log(josh.length);
-*/
+
+
 true || false; 
 
 /*
@@ -94,7 +95,7 @@ const speaker = ["1" ,"2" , "3", "4" , "5" , "6" , "7" , "8" , "9" , "10"];
 console.log(speaker.slice(2, 6));
 */
 
-
+/*
 const animals = ["cat", "dog", "chicken", "ostrich"];
 
 /*
@@ -112,8 +113,7 @@ let   organisms = (animals.concat(insects));// concatenates animals + insects , 
 
 function jail(time) {
   /*
-  return time <
-    30 ? "your on standby"
+  return time < 30 ? "your on standby"
     : `your in jail for ${time} days`; // can use either RETURN OR 2X CONSOLE.LOG 
   */
   time < 30 ? console.log("your on standby") : console.log(`your in jail for ${time} days`);
@@ -165,20 +165,141 @@ function tvs(...args) {
 tvs(1,1,7771);
 
 */
-
+/*
 function storeSupply(cart, supply = 500) {
     
   if (cart === 0) {
     console.log("Enter an amount greater then 0")
-    return;                                            // try taking return away and putting the argument as 0 , you will see it shoes up 2 times , 1 enter greater anount ,2 your order was placed thats why we need that return to end the function
+     return;                                     // try taking return away and putting the argument as 0 , you will see it shoes up 2 times , 1 enter greater anount ,2 your order was placed thats why we need that return to end the function
   }
   if (cart > supply) {
     console.log("Sorry we dont have enough in our supply at the moment")
-    return;
+    return; 
     
   }
 
   console.log("your order was placed")
 }
  
-storeSupply(600, 100);
+storeSupply(600);
+// look back at 3,module 2   return early try to see if it works the way i sent to oliver
+
+*/
+/*
+function getFirstAndLast(array) {
+  
+  let first = array[0];
+
+  let last = array[array.length - 1] // if you dont put array twice , the index starts from zero so - 1 from the addition of the first and last number 
+
+  console.log([first , last ]);
+}
+getFirstAndLast([10, 2, 3, 4, 5]) 
+
+return [()] //creates an array of the returned items 
+*/
+/*
+function calculateEngravingPrice(message, pricePerWord) {
+   // Change code below this line
+
+ let length = message.length - 1;
+
+  
+  let total = length * pricePerWord;
+
+  
+  console.log(total);
+   // Change code above this line
+}
+calculateEngravingPrice("hellophone", 25)
+
+// for split
+// if ('') it means to take away space between the elements or words
+// if (' ')it means to ad a space between each word or letter if case is specififed to do so
+
+*/
+/*
+function addition(add) {
+
+  let total = 0;
+
+  for (let i = 0 ; add.length > i ; i += 1) {
+    total += add[i];
+  }
+  console.log(total);
+}
+
+addition([5,6,6,100,7])
+*/
+/*
+function findLongestWord(string) {
+
+
+let longestword = 0;
+let stringcut = string.split(" ")
+
+  for (let i = 0; i < stringcut.length; i ++){
+
+    let current = stringcut[i];
+
+    if (current.length > longestword.length) {
+      longestword = current;
+    
+    }
+  }
+  
+ return(longestword)
+}
+
+findLongestWord("hi wsp cord where hoard jumped")
+
+*/
+//                                                  creates an array fro m the min parameter until the max ,
+/*
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  
+
+  
+  for (let i = min; i <= max; i += 1){               // if < doesnt have an = it only goes until and not including 
+       
+       numbers.push(i);
+     }
+ 
+  console.log(numbers) ;
+}
+createArrayOfNumbers(50, 100)
+*/
+
+
+/*
+let far = ["plane", "car", "train"]
+
+let length1 = far.length - 1;
+
+let snuff = 2;
+
+function test(far, snuff) {
+  
+  console.log(far.splice(snuff))
+}
+
+test(["hello", "bye" ,"goodbye"],1)
+*/
+
+
+
+
+function filterArray(numbers, value) {
+  
+  let newArray = [];
+
+  for (let i = 0; i < numbers.length; i++) { // it stops iterating when i is greater then the index of numbers.length 
+    
+    if (numbers[i] > value) { //checks if the index i of numbers is greater then the value parameter
+      newArray.push(numbers[i])// pushs the current value of the numbers with i index so automaticaly there all greater the value 
+    }
+  }
+  console.log(newArray); // normaly would put return but to see on my own 
+}
+filterArray([4, 5, 6, 7, 77, 88, 99], 7);
