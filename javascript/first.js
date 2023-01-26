@@ -288,7 +288,7 @@ test(["hello", "bye" ,"goodbye"],1)
 */
 
 
-
+/*
 
 function filterArray(numbers, value) {
   
@@ -297,9 +297,63 @@ function filterArray(numbers, value) {
   for (let i = 0; i < numbers.length; i++) { // it stops iterating when i is greater then the index of numbers.length 
     
     if (numbers[i] > value) { //checks if the index i of numbers is greater then the value parameter
+
       newArray.push(numbers[i])// pushs the current value of the numbers with i index so automaticaly there all greater the value 
+      
     }
   }
+
   console.log(newArray); // normaly would put return but to see on my own 
 }
-filterArray([4, 5, 6, 7, 77, 88, 99], 7);
+filterArray([4, 5, 6, 7, 77, 88, 99], 5);
+/*
+let plus = 1;
+      newArray.push(plus)// add this to the if statement and ul see the 1 added 
+ */
+
+  /*
+      function getCommonElements(array1, array2) { // number 25 , creates an array of the common numbers from the parameters 
+      
+  let newArray = [];
+     
+  for (let i = 0; i < array1.length ;i++){
+   
+    if (array2.includes(array1[i]) === true) {
+      newArray.push(array1[i]);
+
+    } 
+        }
+  for (let j = 0; j < array2.length ;j++){
+   
+    if (array1.includes(array2[j]) === true) {
+      newArray.push(array2[j]);
+  
+    } 
+    if (newArray.includes(array2[j]) === true) {
+      newArray.pop()
+         }
+        }
+  
+        
+  console.log(newArray)
+}
+
+getCommonElements([3,5,8,4,6], [1, 4, 3, 26,6])
+*/
+
+// check if number is even
+/*
+function checkForEven(numbers) {
+   
+  for (let i = 0; i < numbers.length; i++){
+
+    if (numbers[i] % 2 === 0) {
+      console.log(numbers[i] + " is a even number")
+      
+     }
+  }
+  
+}
+
+ checkForEven("6,8")
+ */
