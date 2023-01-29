@@ -357,3 +357,128 @@ function checkForEven(numbers) {
 
  checkForEven("6,8")
  */
+/*
+const a = 5 % 1; // modulus remainder return the remainder not how many times it goes in to each other 
+console.log(a)
+*/
+
+// need to iterate through all numbers starting from start until end
+// need to then check if they are even
+// need to if true .push them to the array
+  /*
+function getEvenNumbers(start, end) { // finds all even numbers in between 2 number arrays 
+   
+  let arrayEven = [];
+  
+  for (let i = 0; i <= end; i++){
+    let even = i
+    if (even % 2 === 0 && even > start) {
+      arrayEven.push(even)
+    }
+     console.log(even) // you can play around with adding or adding negitives to the even like (even - 10)
+  }
+    
+ 
+
+ console.log(arrayEven)
+}  
+getEvenNumbers([5], [20])
+  
+*/
+/*
+function includes(array, value) {
+
+  if (array.indexOf(value) !== -1) { // checks if element is in the entire array and then if it is , true , else false
+      console.log(true)
+  } else {
+    console.log(false);
+    }
+        
+  return
+}
+
+  includes([4,6,8,9,10], 8)
+
+*/
+//                                creating an object
+/*
+const person  = {
+  firstName: "moshe",
+  lastName: "bman",
+  age: "2020",
+  eyeColor: "blue"
+
+};
+
+console.log(person.firstName, "is", person.age = 5, "years of age") // can mutilate an objects information right before its being called
+// once changed it stays changed 
+
+console.log(person.age = 10)
+console.log(person)
+ // console it and you will see that because i changed the perosn.age to 5 , the object kept this value
+
+ */
+
+const
+  man = {
+  name: "joe",
+  lastName: "graze",
+  hairColor: "yellow",
+  car: "rc 350"
+};
+
+let stray = man.name
+
+console.log(stray)
+console.log(man)
+
+/*
+function square(num) { // find square of the number
+  let total = []; 
+  let total2 = [];
+   
+
+  for (let i = 0; i < num.length; i++){
+
+    if (num != 0 && total.length <= 4) { 
+      total.push(num[i] * num[i]) 
+    }
+
+    if (total.length > 4) {
+    total2.push(num[i] * num[i])
+    
+    } 
+  }
+
+  console.log(total,total2)
+
+}
+
+square(["8","3","6","10","5","7","6","0","8","7"])
+
+*/
+
+function additionsubtration(add, minus) {
+  
+  let firstArray = [];
+  for (let i = 0; i < add.length; i++){
+    
+  
+    if (add[i] > minus[i]) {
+     firstArray.push(add[i] - minus[i])
+    } 
+    if (add.includes(i) === true && minus.includes(i) === false) {
+      
+      firstArray.push(add[i])
+    }
+
+  }
+  console.log(firstArray)
+}
+
+additionsubtration(["50", "77", "80","7"], ["28", "40", "-20","66"]) // obv subtracting negitives adds them check
+
+
+
+
+
