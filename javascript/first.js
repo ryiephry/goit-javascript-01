@@ -108,20 +108,20 @@ console.log(animals);  // now that splice is used it shortend the original list 
 const insects = ["praying Mantis", "monarch Butterfly"];
 let   organisms = (animals.concat(insects));// concatenates animals + insects , so animals is first then insects 
       console.log(organisms);
-*/    
+*/
     
-
+/*
 function jail(time) {
   /*
   return time < 30 ? "your on standby"
     : `your in jail for ${time} days`; // can use either RETURN OR 2X CONSOLE.LOG 
-  */
+  
   time < 30 ? console.log("your on standby") : console.log(`your in jail for ${time} days`);
   
 }
 
 (jail(20));
-
+*/
 /*
 function faang() {
   console.log("hi")
@@ -418,7 +418,7 @@ console.log(person)
  // console it and you will see that because i changed the perosn.age to 5 , the object kept this value
 
  */
-
+/*
 const
   man = {
   name: "joe",
@@ -431,6 +431,7 @@ let stray = man.name
 
 console.log(stray)
 console.log(man)
+*/
 
 /*
 function square(num) { // find square of the number
@@ -457,7 +458,7 @@ function square(num) { // find square of the number
 square(["8","3","6","10","5","7","6","0","8","7"])
 
 */
-
+/*
 function additionsubtration(add, minus) {
   
   let firstArray = [];
@@ -477,6 +478,343 @@ function additionsubtration(add, minus) {
 }
 
 additionsubtration(["50", "77", "80","7"], ["28", "40", "-20","66"]) // obv subtracting negitives adds them check
+*/
+/*
+const joe = {
+  name: "jake",
+  lastName: "ghoul",
+  eyeColor: "green",
+  pet: "dog",
+  woman: ["kourtney", "esther", "jake"]
+  
+};
+
+console.log(joe)
+
+let cars = joe.car = "lc 500"; // u can add a object (thats not there) from a vaiable and it pushes it to original object , after its declaired , not before
+
+let woman = joe.woman[1]; // goes to woman and goes to index 1 and converts the string to normal text , if you take away the index and console.log it youl see the entire array
+/*
+console.log(woman)
+
+
+joe["pet"] = "max" // changes jey , value 
+joe.woman.push("john")
+console.log(joe["woman"])
+console.log(joe["pet"])// works
+
+joe.hoodies = "tieDie";
+console.log(joe["hoodies"])
+
+*/
+/*
+const name = "andrew";
+const pen = "ballPoint";
+
+const objectTest = {
+
+  name, /* === myName: name, 
+  pen,  /* === myPen: pen, }
+  console.log(objectTest)
+
+*/
+/*
+
+
+const futureCars = {
+  
+  oldTruck: "FORD F 150",
+   
+  totalCars: 5,
+
+  newTrucks(truck) {
+    console.log("your new truck of choice is a" ,truck)
+  },
+
+  carCollection(cars) {
+    let luxuryCars = [];
+    luxuryCars.push(cars)
+    
+   /* console.log(luxuryCars)
+  },
+
+  watches(watch) {
+    /*
+    console.log(this.totalCars)
+    
+    
+  } 
+}
+
+futureCars.newTrucks("SILVRADO"), futureCars.carCollection("bugatti Chiron Pur Sport"), futureCars.carCollection("McLarin Speedtail")
+
+
+
+// always add  (.hasOwnProperty(key)) when iteratin over an object with FOR IN 
+for (const key in futureCars) {
+  if (futureCars.hasOwnProperty(key)) {
+    console.log(key + " " ,1)
+    
+  }
+  
+}
+ 
+const hair = {
+
+  blonde: "5",
+  black: "7",
+  ginger: "1",
+};
+
+let myHair = Object.keys(hair) // object.keys() return an array of the KEYS, not values 
+console.log(myHair)
+
+
+const woman = {
+
+  mistress1: "madam",
+  main1: "razel",
+  piece: "ronald",
+  money: ["20k", "50k", "100k", "200k" ]
+}
+
+
+for (const wo in woman) {
+  
+  console.log(woman[wo])
+}
+woman.poor = 6
+
+woman.poor["black"] = 8
+
+console.log()
+
+
+const keyBoards = {
+
+  logitech: "SS4300",
+  dell: "4750p",
+  sony: "L328",
+  apple: "777Y"
+
+}
+let length = []
+let theBoard = 0;
+for (const boards in keyBoards) {
+   
+  length.push(boards)
+  theBoard = length.length
+  console.log(theBoard)
+}
+
+
+
+const iterator = {
+  number1: 10,
+  number2: 20,
+  number3: 30
+}
+let keys = Object.keys(iterator)
+let air = 0;
+
+for (const it of keys) {
+  let length = keys.length;
+
+  
+  air = length
+  
+  console.log(air)
+}
+
+
+const colors = [
+  {
+    hex: "#f44336",
+    rgb: "244,67,54"
+  },
+  
+  {
+    hex: "#2196f3",
+    rgb: "33,150,243"
+  },
+  
+  {
+    hex: "#4caf50",
+    rgb: "76,175,80"
+  },
+  
+  {
+    hex: "#ffeb3b",
+    rgb: "255,235,59"
+  },
+];
+const hexColors = [];
+const rgbColors = [];
+for (const col of colors) {
+  hexColors.push(col.hex)
+}
+
+console.log(hexColors)
+
+const products = [
+  {
+    name: "Radar",
+    price: 1300,
+    quantity: 4
+  },
+  { name: "roid", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+
+  
+
+
+
+
+
+
+}
+
+getProductPrice("Radar")
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+  
+function getProductPrice(productName) {
+  
+  
+  for (const product of products) {
+    
+    if(productName === product.name){
+  
+      console.log(product.price)
+      
+      
+    } 
+      
+  }
+  console.log(null) 
+  
+} 
+getProductPrice("Droid")
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+function getAllPropValues(propName) {
+  let array = []
+  for (const prod of products) {
+    if (prod[propName] != undefined) {
+      array.push(prod[propName])    
+    } 
+  }
+  console.log(array)
+    // console.log(array)
+    // console.log(array[products.length - products.length])
+}
+getAllPropValues("name")
+getAllPropValues("price")
+getAllPropValues("quantity")
+getAllPropValues("20")
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+function getAllPropValues(propName) {
+  
+  let array = [];
+
+  for (const prod of products) {
+
+    
+    if (prod.name === propName) {
+     console.log(prod.price * prod.quantity) 
+   }else console.log(0)
+   
+    
+  }
+   
+}
+
+getAllPropValues("Radar")
+getAllPropValues("Droid")
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+];
+
+for (const { title , author , rating } of books) {
+  console.log(title);
+  console.log(author);
+  console.log(rating);
+}
+
+
+const numbers = [4 , 6 , 16];
+
+const halfNumbers = [1,6]
+
+const jag = {
+  mice: 1 , 
+  pig: 2
+  
+}
+const nag = {
+
+  rag: 3 , 
+  flag: 4 , 
+  pig: 6
+}
+
+let j = {...nag , ...jag} // from this we know , last declaired is the output , however once its declaired thats where the name stays but value can change depending on if a different object changed it 
+console.log(j)
+
+
+console.log(...numbers , ...halfNumbers)
+
+console.log(Math.max(...numbers)) // ... , returns the largest of the numbers in such a situation
+
+const a = Math.max(...numbers)
+console.log(a + a) 
+const b = Math.min(...numbers) // lowest number 
+
+console.log(a - b)
+
+*/
+
+function multiply(...a) {
+ 
+  console.log(a)
+}
+multiply(6,7,6)
+
+
+
+
+
 
 
 
