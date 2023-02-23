@@ -803,20 +803,882 @@ const b = Math.min(...numbers) // lowest number
 
 console.log(a - b)
 
-*/
+
 
 function multiply(...a) {
- 
-  console.log(a)
+  let array =[ a[0] * a[1] ];
+   
+  
+  console.log(array)
 }
 multiply(6,7,6)
 
 
+function addition(first , ...a) {
+  
+  let total = 0;
+
+  for (const ar of a){
+      // or an if statement
+    if (first <= ar) {
+      
+      total += ar;
+      console.log(total)
+      
+    }
+    // total += ar;
+    // console.log(total)
+  }
+  // console.log(total)
+}
+addition(55,78,66,95,77,55) // taxes each one and adds to total even if it has other elements each comma is a seperate expression / can add negetives and multiplication~
+
+
+
+function findMatches(parameter , ...mats) { // ... must be last or it will throw an error 
+  
+  const matches = [];
+
+  for (const par of parameter) { // if par === mat , while their both looping over each other then push it 
+    for (const mat of mats) {
+      
+      if (par === mat) {
+        matches.push(par)
+      }
+    }
+  }
+
+  console.log(matches)
+}
+
+findMatches([3, 66, 77, 5, 6], 63, 42, 77, 5, 3) // iterates through first array/ parameter and if === itself pushes itself to var
+
+
+const books = {
+
+  booking: ["The Great Almighty" , "Chicken Little"],
+
+  fake : ["candy" , "food"],
+  allbooks(){
+
+    console.log(this.booking)
+
+    console.log(this.fake)
+  }
+}
+
+books.allbooks()
+
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+   
+ let number = this.books.indexOf(oldName);
+
+ console.log(bookShelf.books.splice(number,1,newName));
+
+ 
+ console.log(bookShelf.books)
+  },
+
+};
+
+bookShelf.updateBook("Haze" , "George")
+
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    
+    
+  let number = this.potions.indexOf(potionName)
+
+  console.log(this.potions.splice(number ,1))
+    
+  console.log(this.potions)
+  }
+  
+};
+
+
+atTheOldToad.removePotion("Dragon breath")
+
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+     addPotion(newPotion) {
+    for (const pot of this.potions){
+
+     if(pot.name === newPotion.name){
+        return `Error! Potion ${pot.name} is already in your inventory!`
+       }
+    }
+    this.potions.push(newPotion);
+     
+  }, 
+   
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+    
+
+    for (let i = 0; i < this.potions.length; i++) {
+
+      if (potionName === this.potions[i].name) {
+        this.potions.splice(i, 1)
+        return
+        
+      } 
+    }
+    console.log(`Potion ${potionName} is not in inventory!`)
+        
+     console.log(this.getPotions())
+     
+  },
+
+
+  updatePotionName(oldName, newName) {
+
+    for (let i = 0; i < this.potions.length; i++){
+
+      if (oldName === this.potions[i].name) {
+
+        // this.potions.splice(i, 1, newName)
+       
+        console.log(this.potions[i].name)
+      }
+    }
+
+    // console.log(this.potions)
+  },
+  // Change code above this line
+  
+};
+atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion')
+console.log(atTheOldToad.potions)
+
+
+let jug = [8,5, 7, 9, 13,22, 16, 27, 89,4]
+
+function odd(nums) {
+  let even = []
+  for (const num of nums) {
+    
+    if (num % 2 != 0) {
+      console.log(num)
+
+    }
+    else {
+      even.push(num)
+      
+    }
+  }
+  console.log(even)
+}
+console.log(odd(jug))
+
+
+// Callback
+
+function greet(name) {
+  console.log(`Welcome ${name}.`);
+}
+
+// Higher-order function
+function registerGuest(name, ca) {
+  console.log(`Registering guest ${name}.`);
+  ca(name);
+}
+
+registerGuest("Mango", greet);
+
+
+function processCall(recipient, onAvailable, onNotAvailable) {
+  // Simulating the subscriber’s availability with a random number
+  const isRecipientAvailable = Math.random() > 0.5;
+
+  if (!isRecipientAvailable) {
+    onNotAvailable(recipient);
+    return;
+  }
+
+  onAvailable(recipient);
+}
+
+function takeCall(name) {
+  console.log(`Connecting you to ${name}, please wait...`);
+  // Call handling logic
+}
+
+function activateAnsweringMachine(name) {
+  console.log(
+    `The subscriber ${name} is not available, please leave a message.`
+  );
+  // Answering machine activation logic
+}
+
+function leaveHoloMessage(name) {
+  console.log(`The subscriber ${name} is not available, recording a hologram.`);
+  // Hologram record logic
+}
+
+processCall("Mangooo", takeCall, leaveHoloMessage);
+
+processCall("Poly", takeCall, leaveHoloMessage);
+
+takeCall("hi")
+
+leaveHoloMessage("jay")
+
+
+function deliverPizza(pizzaName) {
+  console.log(`Delivering ${pizzaName} pizza.`);
+  
+}
+
+function makePizza(pizzaName) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  console.log("ee")
+}
+
+// Chande code below this line
+function makeMessage(pizzaName, callback) {
+  
+  console.log(callback(pizzaName));
+  return
+}
+makeMessage("Royal Grand", makePizza)
+makeMessage("Ultracheese", deliverPizza)
+
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName, onSuccess, onError) {
+    const gorg = this.pizzas.includes(pizzaName)
+
+    if (gorg === false) {   
+      onError(pizzaName)
+      console.log(`There is no pizza with a name ${pizzaName} in the assortment.`)
+    }
+    else {
+      onSuccess(pizzaName)
+    }
+  },
+};
+
+function makePizza(pizzaName) {
+  console.log(`Your order is accepted. Cooking pizza ${pizzaName}.`);
+}
+
+// Callback for onError
+function onOrderError(error) {
+  console.log(`Error! ${error}`);
+}
+
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError);
+
+//makePizza("h")
+
+function repeatLog(n) {
+  for (let i = 0; i < n ; i += 1) {
+    console.log(i);
+  }
+}
+
+repeatLog(10);
+*
+const numbers = [5, 10, 15, 20, 25];
+
+// Classic for
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Index ${i}, value ${numbers[i]}`);
+// }
+
+numbers.forEach(function (num, ind) {
+  console.log(`Index ${ind}, value ${num}`); // faster however always goes till end of array
+});
+
+
+const greet = (l) => {
+  console.log("Hello! ", l); // is treated as variable in syntax but is still a function ,substitutes l for var in GREET(l)
+};
+
+greet("jay", "h")
+const name = (eph, jay, ...kon) => console.log("hello ", eph, jay, "and", kon);
+
+name("jsoh", "chris", "ronald","kondin")
+
+const numbers = [5, 10, 15, 20, 25];
+
+// Function declaration
+numbers.forEach(function ( n,i) {
+  console.log(`Index ${i}, value ${n}`);
+});
+
+const numbers = [5, 10, 15, 20, 25, 30 , 35];
+
+const logMessage = (number, index) => {
+  console.log(`Index ${index}, value ${number}`); //declairing an arrow fucntion callback seperately , normaly its done together , this is only done when its a very long or cumbersome piece
+};
+
+numbers.forEach(logMessage);
+
+const numbersf = [1, 2, 3, 4, 5, 6 ,7 ];
+const filteredNumbers = numbersf.filter(v => v > 3);
+console.log(filteredNumbers);
+
+const names = ["jake", "john", "jrew", "fig"]
+
+const functionNames = names.filter(x => x === "john") // play around with it if true returns an array of the true statement , in this case its "john"
+
+
+console.log(functionNames)
+
+const myFunction = ( array, number) =>{
+  for (let i = 0; i < array.length; i++){
+    array[i] = array[i] * number 
+  }
+  console.log(array) // uses outside variables 
+}
+let myArray = [3,5,6,7,8]
+myFunction(myArray, 6)
+
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  
+
+
+   orderedItems.forEach(function (element,array){
+     totalPrice  += orderedItems[array]
+     console.log("hi")
+   })
+
+  
+  console.log(totalPrice);
+}
+calculateTotalPrice([164, 48, 291, 1])
+
+
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
 
 
 
 
+   let jay = filteredNumbers.push( numbers.filter(v => v >= value))
+
+  
+  // Change code above this line
+ console.log(filteredNumbers);
+}
+filterArray([1, -2, 4, 6, 8, 9, 10], 4)
+
+
+function changeEven(numbers, value) {
+  // Change code below this line
+
+
+  let box = []
+
+  numbers.forEach(function (num,array) {
+
+    if(num % 2 === 0){
+      box.push(num + value)
+    }else {
+      box.push(num)
+    }
+  })
+  console.log(box) 
+  // Change code above this line
+}
+
+changeEven([5, 6, 7, 34, 66], 6)
+changeEven([17, 24, 68, 31, 42], 100)
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// Change code below this line
+const planetsLengths = planets.map(planet => planet.length);
+
+console.log(planetsLengths)
+
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const titles = books.map( book => book.title);
+console.log(titles)
+
+
+
+let numbers = [6, 8, 22,22, -4, 77,-8,5,5];
+
+let positiveNumber = numbers.filter(num => num > 10)
+let negetiveNumber = numbers.filter(num => num < 0)
+console.log(positiveNumber)
+console.log(negetiveNumber)
+
+
+
+const uniqueCourses = numbers.filter(
+  (course, index, array) => array.indexOf(course) === index // course is current element , index is index of current element , array is the  total array 
+); // we check if the total array has current element  if its === the index , if not it doesnt put , so if twice or more it only finds first one , by indexOf
+
+console.log(uniqueCourses)
+
+const LOW_SCORE = 50;
+const HIGH_SCORE = 80;
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+  { name: "jake", score: 72 },
+  { name: "kaen" , score:51}
+];
+
+const best = students.filter(student => student.score > HIGH_SCORE);
+console.log(best); // Array of objects named Mango and Kiwi
+
+const middle = students.filter(
+  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE)
+console.log(middle)
+
+const worst = students.filter(student => student.score < LOW_SCORE)
+console.log(worst)
+
+
+  
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+
+const MIN_RATING = 8;
+const AUTHOR = "Bernard Cornwell";
+// Change code below this line
+
+const topRatedBooks = books.filter(book => book.rating >= MIN_RATING) 
+        console.log(topRatedBooks)                          
+const booksByAuthor = books;
+
+
+const getUsersWithEyeColor = (users, color) => {
+ 
+  let correctEyeColor = users.filter(eye => eye.eyeColor === color)
+  // console.log(correctEyeColor)
+  // console.log(correctEyeColor.map(user => user.name)) // only selects the users.name elemnet as opposed to the entire users , user element 
+  
+};
+// Change code above this line
+
+getUsersWithEyeColor([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },],"blue")
+
+
+const getFriends = (users) => {
+
+  let totalFriends = users.flatMap(user => user.friends);
+   
+  console.log(totalFriends)
+
+  let onlyUnique = totalFriends.filter((use, i, ar) => ar.indexOf(use) === i)
+  console.log(onlyUnique)
+};
+
+// Change code above this line
+getFriends([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },])
+
+  // .filter returns and array
+  const getInactiveUsers = (users) => {
+   let inactiveUsers = users.filter(use => use.isActive != true)
+  console.log(inactiveUsers)
+};
+getInactiveUsers([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },])
+  
+  const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+const totalAveragePlaytimePerGame = players.reduce((past , ele ) => {return  (past += ele.playtime / ele.gamedPlayed)},0);
+//const totalAveragePlaytimePerGame = players.reduce((total , element) => {return (total += element.playtime / element.gamesPlayed)},0);
+console.log(totalAveragePlaytimePerGame)
 
 
 
 
+  const getTotalFriendCount = (users) => {
+    let totalCount = users.reduce((past, element) => past += element.friends.length, 0); // need to declaire the 0 , so it starts at 0 
+    return totalCount;
+};
+ 
+
+                                                                                                                                                                                                            
+// Change code above this line                            
+
+console.log(getTotalFriendCount([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",                                   
+    friends: ["Sh                                                                                                                                                                                                                                                                                           arron Pace"],               
+    isActive: false,                                                                                                                                                                                                                                                                                                            
+    balance: 2811,                   
+    gender: "male"               
+  },                                                                                                                                                                         
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },]))
+
+  const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Change code below this line
+
+const ascendingReleaseDates = releaseDates.sort(function (x,y) {return x - y});
+console.log(ascendingReleaseDates)
+const descendingReleaseDates = releaseDates.sort((x, y) => { return y - x });
+console.log(descendingReleaseDates)
+    
+
+
+const getNamesSortedByFriendCount = users => {
+
+  
+  let count =  [...users]
+                .sort((a,b) => a.friends.length - b.friends.length)  
+                .map((a) => a.name)
+  console.log(count)
+};
+getNamesSortedByFriendCount([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",                                   
+    friends: ["Sh                                                                                                                                                                                                                                                                                           arron Pace"],               
+    isActive: false,                                                                                                                                                                                                                                                                                                            
+    balance: 2811,                   
+    gender: "male"               
+  },                                                                                                                                                                         
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },])
+
+  
+ const getTotalBalanceByGender = (users, gender) => {
+   console.log(gender)
+   console.log([...users]
+         
+     .filter((a) => a.gender === gender)
+     
+    .reduce((a, b) => { return a + b.balance },0)  // try with out 0 at end , reason why is at every iteration it just COMBINES DOES NOT ADD , therefore need to initialize at 0 
+   )
+   
+};
+getTotalBalanceByGender([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",                                   
+    friends: ["Sh                                                                                                                                                                                                                                                                                           arron Pace"],               
+    isActive: false,                                                                                                                                                                                                                                                                                                            
+    balance: 2811,                   
+    gender: "male"               
+  },{
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",                                   
+    friends: ["Sh                                                                                                                                                                                                                                                                                           arron Pace"],               
+    isActive: false,                                                                                                                                                                                                                                                                                                            
+    balance: 2811,                   
+    gender: "male"               
+  },                                                                                                                                                                         
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },], "female")
+  
+
+
+function showThis() {
+  console.log("this in showThis: ", this);
+}
+showThis()
+
+const user = {
+  name:"jay Smith"
+}
+
+user.content = showThis
+
+user.content()
+
+const module = {
+  x: 50,
+  getX: function() {
+    return this.x;
+  }
+};
+console.log(module.getX())
+
+const unboundGetX = module.getX;
+//console.log(unboundGetX.bind(module)); // The function gets invoked at the global scope
+// Expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// Expected output: 50
+//                                      functions inside objects are  really just object methods
+
+function names(...time) { // includes all consecutive outputs , parameters , in to an  array 
+  console.log("it is",...time,"by your area,",this.fName) // the ... converts the array to string , 
+}
+
+const first = {
+  fName: "josh"
+}
+const second = {
+  fName: "jake Gyllenhaal"
+}
+// names.call(first, "11:12")
+// names.call(second, "12:45")
+// names.apply(first, ["12:48", "1:56"])
+
+// function men(jjj) {
+//   console.log("By the way MR",this.first,"has",jjj+"$","dollars in JP Morgan Chase") // jjj is the parameter 364000, this .first is binded to human.first, so this.first = "george"
+// }
+// let myf = men.bind(human)
+// myf("364000")
+
+
+const human = {
+  first: "GEORGE",
+  secondName: "FILIPINO",
+  addBoth() {
+    return `${this.first}:${this.secondName}`;
+  },
+};
+console.log(human.addBoth())
+
+
+function fullName(ong) {
+  
+  console.log("Hello to you MR",ong())
+}
+
+fullName(human.addBoth.bind(human))
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() is a call of the getFullName method without an object
+  console.log(`Processing request from ${callback()}.`);
+}
+
+//makeMessage(customer.getFullName); // Function call error
+makeMessage(customer.getFullName.bind(customer))
+
+const animals = {
+  tail: 1,
+  legs: 3,
+  toes:12
+}
+const myDog = Object.create(animals)
+myDog.arms = "5"
+
+console.log(myDog)
+console.log(animals.isPrototypeOf(myDog))
+
+
+class Person { 
+// can take out  of { } and first example will work , it doesnt now because the {} is telling the console its a object instead of a var 
+  #last; //private u do
+  first; //dont need to declare public properties 
+  
+  constructor({first, last}) {
+    this.#last = last // instance properties / these are called public properties , everytime a NEW object is createed from the class object , it creates a personalizied constructor
+    this.first = first 
+  }
+
+ get last() {
+  return  this.#last
+  }
+  set first(newfirst) {
+    if (first === "") {
+      console.error("can not be an empty string")
+      return;
+    }
+    this.first = first
+  }
+}
+
+// let eph = new Person("josh","Samuels") // reason why output is in different order , is the way you control the initializing / when
+// console.log(eph)
+//or
+
+let finland = new Person({
+  first: "crops",
+  last: "flops"
+})
+console.log(finland)
+
+const chris = new Person ({
+  first: "paper",
+  last: "mache"
+})
+
+console.log(chris)
+console.log(chris.first)
+
+chris.first = "NoPaperLeft"
+console.log(chris.first)
+//chris.first = "" // last is undefined only because i cant access it in this scope (it was made private by #)
+//console.log(chris.first)
+//console.log()
+
+
+// class ,
+// set
+// get
+// static 
+*/

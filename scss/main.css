@@ -47,4 +47,11 @@
     transform-origin: left;
     transform: scaleX(1);
 }
-*//*# sourceMappingURL=main.css.map */
+*/
+.firstList {
+  background-color: rgb(255, 85, 0);
+}
+
+.logoText {
+  color: brown;
+}/*# sourceMappingURL=main.css.map */
