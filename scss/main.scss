@@ -2,8 +2,6 @@
     display:flex;
    /* justify-content: center; */
     align-content: center;
-    
-   
 }
 .btn{
     position:relative;
@@ -55,4 +53,13 @@
 }
 .logoText {
     color:brown
+}
+.main-content {
+  ///  display:flex;
+    //justify-content: center;
+}
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
